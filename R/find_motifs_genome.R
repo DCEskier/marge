@@ -84,7 +84,7 @@ find_motifs_genome <- function(x, path, genome,
         stop("Output directory exists (set `overwrite = TRUE` to bypass)")
     }
 
-    if (background != "automatic" && local_background != FALSE) {
+    if (!identical(background, "automatic") && !identical(local_background, FALSE)) {
         stop("`background` and `local_background` are mutually exclusive; use only one")
     }
     if (only_known != FALSE & only_denovo != FALSE) {
